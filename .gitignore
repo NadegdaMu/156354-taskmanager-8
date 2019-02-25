@@ -13,7 +13,4 @@ node_modules/
 
 # Папка с собранными файлами проекта
 build/
-
-webpack.config.js
-package-lock.json
-package.json
+bundle.js

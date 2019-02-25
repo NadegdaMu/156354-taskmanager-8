@@ -1,5 +1,5 @@
-import makeFilter from './make-filter.js';
-import makeTask from './make-task.js';
+import makeFilter from './make-filter';
+import makeTask from './make-task';
 
 const filterElements = document.querySelector(`.main__filter`);
 const taskElements = document.querySelector(`.board__tasks`);
@@ -43,6 +43,4 @@ const filterClickHandler = () => {
 
 const filterCollection = filterElements.querySelectorAll(`.filter__label`);
 
-filterCollection.forEach(function (el) {
-  el.addEventListener(`click`, filterClickHandler);
-});
+filterCollection.forEach((el) => el.addEventListener(`click`, filterClickHandler));
