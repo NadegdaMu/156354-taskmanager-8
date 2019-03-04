@@ -1,5 +1,6 @@
 import makeFilter from './make-filter';
 import makeTask from './make-task';
+import {task} from './get-task';
 
 const filterElements = document.querySelector(`.main__filter`);
 const taskElements = document.querySelector(`.board__tasks`);
@@ -26,9 +27,10 @@ const renderFilterElements = () => {
 renderFilterElements();
 
 // Функция отрисовки карточек товара
+const sameTask = task();
 const renderTasksElement = (number) => {
   for (let i = 0; i < number; i++) {
-    taskElements.insertAdjacentHTML(`beforeend`, makeTask());
+    taskElements.insertAdjacentHTML(`beforeend`, makeTask(sameTask));
   }
 };
 

@@ -1,5 +1,5 @@
 // Функция создания шаблона карточки задачи
-export default () => `<article class="card card--yellow card--deadline">
+export default (task) => `<article class="card card--${task.colorValue()}">
             <form class="card__form" method="get">
               <div class="card__inner">
                 <div class="card__control">
@@ -28,10 +28,7 @@ export default () => `<article class="card card--yellow card--deadline">
                     <textarea
                       class="card__text"
                       placeholder="Start typing your text here..."
-                      name="text"
-                    >
-                      This is card with missing deadline</textarea
-                    >
+                      name="text">${task.randomTitleValue()}</textarea>
                   </label>
                 </div>
 
@@ -154,7 +151,7 @@ export default () => `<article class="card card--yellow card--deadline">
                             class="card__hashtag-hidden-input"
                           />
                           <button type="button" class="card__hashtag-name">
-                            #repeat
+                            #${task.randomTagsValue()}
                           </button>
                           <button type="button" class="card__hashtag-delete">
                             delete
@@ -169,7 +166,7 @@ export default () => `<article class="card card--yellow card--deadline">
                             class="card__hashtag-hidden-input"
                           />
                           <button type="button" class="card__hashtag-name">
-                            #cinema
+                             #${task.randomTagsValue ()}
                           </button>
                           <button type="button" class="card__hashtag-delete">
                             delete
@@ -184,7 +181,7 @@ export default () => `<article class="card card--yellow card--deadline">
                             class="card__hashtag-hidden-input"
                           />
                           <button type="button" class="card__hashtag-name">
-                            #entertaiment
+                            #${task.randomTagsValue ()}
                           </button>
                           <button type="button" class="card__hashtag-delete">
                             delete
@@ -210,7 +207,7 @@ export default () => `<article class="card card--yellow card--deadline">
                       name="img"
                     />
                     <img
-                      src="img/add-photo.svg"
+                      src="${task.getPicture()}"
                       alt="task picture"
                       class="card__img"
                     />
